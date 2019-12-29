@@ -1,0 +1,27 @@
+{
+  "name": "02.helloworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor app2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/innurman/2019-node2-helloworld.git"
+  },
+  "keywords": [],
+  "author": "Jin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/innurman/2019-node2-helloworld/issues"
+  },
+  "homepage": "https://github.com/innurman/2019-node2-helloworld#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "pug": "^2.0.4"
+  }
+}
