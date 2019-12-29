@@ -5,6 +5,12 @@ const port = 3000;
 // POST thru express-4.0's body-parser
 const bodyParser = require("body-parser"); // Middleware
 
+// pug settings
+app.set('view engine', 'pug');
+app.set('views', './views');
+app.locals.pretty = true;
+
+// bodyParser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -77,3 +83,33 @@ app.post("/join", (req, res) => {
     let userpw = req.body.userpw;
     res.send(`userid: ${userid} / userpw: ${userpw}`);
 });
+
+
+///////////////////////////////////////////////////////////////////
+// PUG
+// HTML VIEW Engine
+// https://pugjs.org/api/getting-started.html
+//   "dependencies": {
+//     "express": "^4.17.1",
+//     "morgan": "^1.9.1",
+//     "multer": "^1.4.2",
+//     "pug": "^2.0.4"
+//   }
+// express --view=pug 03.express-generator
+///////////////////////////////////////////////////////////////////
+
+// http://127.0.0.1:3000/pug
+// http://127.0.0.1:3000/pug?name=홍길동
+// view-source:http://127.0.0.1:3000/pug
+app.get("/pug", (req, res) => {
+    //res.render("form.pug");
+    
+    let vals = {
+        title: "PUG 연습",
+        name: req.query.name || 'TEST', 
+
+
+    }
+    res.render("form2.pug", vals);
+});
+
